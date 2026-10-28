@@ -1,6 +1,6 @@
 # Полный цикл: инструменты UB (для человека, который видит это впервые)
 
-Эта папка **`ub`** — набор связанных программ Uncle Bob / Noodle для **качества кода** и **UML-диаграммы с агентом**.  
+Эта папка **`ub`** — рабочий набор [форков Noodle-cpp](README.ru.md) для **качества кода** и **UML-диаграммы с агентом**.  
 Вы **не** запускаете всё из корня `ub`. Вы работаете **в своём проекте** (solution, репозиторий приложения), а инструменты вызываете из соседних каталогов или через PATH.
 
 ---
@@ -27,14 +27,14 @@
 
 ## 1. Карта каталога `ub`
 
-| Папка | Что делает | Куда пишет результат |
+| Репозиторий | Что делает | Куда пишет результат |
 |--------|------------|----------------------|
-| [crapper/](crapper/) | CRAP, сложность, покрытие | `<ваш-проект>/.metrics/crap.edn` |
-| [mutator/](mutator/) | мутационные тесты | `<ваш-проект>/.metrics/mutate/` |
-| [dryer/](dryer/) | дубли кода | `<ваш-проект>/.metrics/dry.edn` |
-| [uml-viewer/](uml-viewer/) | IR из policy, Quil-окно, `./uml` + Grok | IR `.edn`, `.uml-viewer/` |
-| [uml-viewer-dotnet/](uml-viewer-dotnet/) | то же без JVM (Avalonia) | читает те же `.metrics` и IR |
-| [ub-mode/](ub-mode/) | skill для Cursor/Grok | только `SKILL.md` — копируете к себе |
+| [Noodle-cpp/crapper](https://github.com/Noodle-cpp/crapper) | CRAP, сложность, покрытие | `<ваш-проект>/.metrics/crap.edn` |
+| [Noodle-cpp/mutator](https://github.com/Noodle-cpp/mutator) | мутационные тесты | `<ваш-проект>/.metrics/mutate/` |
+| [Noodle-cpp/dryer](https://github.com/Noodle-cpp/dryer) | дубли кода | `<ваш-проект>/.metrics/dry.edn` |
+| [Noodle-cpp/uml-viewer](https://github.com/Noodle-cpp/uml-viewer) | IR из policy, Quil-окно, `./uml` + Grok | IR `.edn`, `.uml-viewer/` |
+| **uml-viewer-dotnet** (рядом в workspace) | то же без JVM (Avalonia) | читает те же `.metrics` и IR |
+| [Noodle-cpp/ub-mode](https://github.com/Noodle-cpp/ub-mode) | skill для Cursor/Grok | `SKILL.md` — копируете к себе |
 
 **mutator** при первом запуске ищет **crapper рядом**: `../crapper` от папки `mutator`. В layout `ub` это уже так — ничего настраивать не нужно.
 
@@ -61,7 +61,7 @@ D:\dev\Noodle.IntegrationHub\
       companion.edn                  ← если запускали companion
 ```
 
-Для **C#** namespace в метриках = **`Namespace.Type`** (как в IDE). Это должно совпадать с IR uml-viewer — см. [uml-viewer/docs/csharp-project.ru.md](uml-viewer/docs/csharp-project.ru.md).
+Для **C#** namespace в метриках = **`Namespace.Type`** (как в IDE). Это должно совпадать с IR uml-viewer — см. [csharp-project.ru.md](https://github.com/Noodle-cpp/uml-viewer/blob/master/docs/csharp-project.ru.md).
 
 ---
 
@@ -97,7 +97,7 @@ python -m venv .venv
 ### .NET viewer (опционально)
 
 - [.NET 8 SDK](https://dotnet.microsoft.com/download).
-- Подробности: [uml-viewer-dotnet/docs/USAGE.ru.md](uml-viewer-dotnet/docs/USAGE.ru.md).
+- Подробности: [uml-viewer-dotnet/docs/USAGE.ru.md](uml-viewer-dotnet/docs/USAGE.ru.md) в локальном checkout или после публикации форка.
 
 ---
 
@@ -298,7 +298,7 @@ Viewer **не** выполняет regen сам — он **ставит зада
 
 ## 7. ub-mode — если работаете с AI в Cursor
 
-1. Скопируйте [ub-mode/SKILL.md](ub-mode/SKILL.md) в каталог skills агента (см. [ub-mode/README.ru.md](ub-mode/README.ru.md)).  
+1. Скопируйте [ub-mode/SKILL.md](https://github.com/Noodle-cpp/ub-mode/blob/master/SKILL.md) в каталог skills агента (см. [README.ru.md](https://github.com/Noodle-cpp/ub-mode/blob/master/README.ru.md)).  
 2. Вызовите `/ub-mode` или включите skill.  
 3. Агент должен: **сначала** рабочий код и тесты, **потом** пороги CRAP &lt; 10, dry &lt; 0.8, mutator без выживших.
 
@@ -373,13 +373,14 @@ clj -M:ir /d/dev/Noodle.Policy.Engine/engine.policy.edn \
 
 | Тема | Документ |
 |------|----------|
-| CRAP, языки, покрытие | [crapper/README.ru.md](crapper/README.ru.md) |
-| Мутации, воркеры | [mutator/README.ru.md](mutator/README.ru.md) |
-| Дубли | [dryer/README.ru.md](dryer/README.ru.md) |
-| Policy, `./uml`, companion | [uml-viewer/README.ru.md](uml-viewer/README.ru.md) |
-| C# scan + overlay | [uml-viewer/docs/csharp-project.ru.md](uml-viewer/docs/csharp-project.ru.md) |
-| .NET viewer по шагам | [uml-viewer-dotnet/docs/USAGE.ru.md](uml-viewer-dotnet/docs/USAGE.ru.md) |
-| Дисциплина агента | [ub-mode/README.ru.md](ub-mode/README.ru.md) |
+| CRAP, языки, покрытие | [Noodle-cpp/crapper — README.ru.md](https://github.com/Noodle-cpp/crapper/blob/master/README.ru.md) |
+| Мутации, воркеры | [Noodle-cpp/mutator — README.ru.md](https://github.com/Noodle-cpp/mutator/blob/master/README.ru.md) |
+| Дубли | [Noodle-cpp/dryer — README.ru.md](https://github.com/Noodle-cpp/dryer/blob/master/README.ru.md) |
+| Policy, `./uml`, companion | [Noodle-cpp/uml-viewer — README.ru.md](https://github.com/Noodle-cpp/uml-viewer/blob/master/README.ru.md) |
+| C# scan + overlay | [uml-viewer/docs/csharp-project.ru.md](https://github.com/Noodle-cpp/uml-viewer/blob/master/docs/csharp-project.ru.md) |
+| .NET viewer по шагам | [uml-viewer-dotnet/docs/USAGE.ru.md](uml-viewer-dotnet/docs/USAGE.ru.md) (в локальном checkout) |
+| Дисциплина агента | [Noodle-cpp/ub-mode — README.ru.md](https://github.com/Noodle-cpp/ub-mode/blob/master/README.ru.md) |
+| Обзор форков | [README.ru.md](README.ru.md) |
 
 ---
 
