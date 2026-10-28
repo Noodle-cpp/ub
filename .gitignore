@@ -1,0 +1,7 @@
+# Nested tool repos (each has its own git history)
+/crapper/
+/dryer/
+/mutator/
+/ub-mode/
+/uml-viewer/
+/uml-viewer-dotnet/
