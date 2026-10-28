@@ -89,6 +89,14 @@ python -m venv .venv
 
 То же для `mutator` и `dryer`: `python -m mutator`, `python -m dryer`.
 
+**Вариант C — без Python на этой машине:** скачайте **`crapper.exe`**, **`mutator.exe`**, **`dryer.exe`** (сборка PyInstaller). Как собрать или взять из GitHub Actions — **[docs/STANDALONE.ru.md](docs/STANDALONE.ru.md)**. Пример:
+
+```powershell
+D:\tools\bin\crapper.exe D:\dev\Noodle.IntegrationHub
+```
+
+`mutator.exe` уже содержит crapper; рядом клон **crapper** для runtime не нужен.
+
 ### Clojure viewer
 
 - Установите [Clojure CLI](https://clojure.org/guides/install_clojure) и **Java 21+**.
@@ -379,6 +387,7 @@ clj -M:ir /d/dev/Noodle.Policy.Engine/engine.policy.edn \
 | Policy, `./uml`, companion | [Noodle-cpp/uml-viewer — README.ru.md](https://github.com/Noodle-cpp/uml-viewer/blob/master/README.ru.md) |
 | C# scan + overlay | [uml-viewer/docs/csharp-project.ru.md](https://github.com/Noodle-cpp/uml-viewer/blob/master/docs/csharp-project.ru.md) |
 | .NET viewer по шагам | [uml-viewer-dotnet/docs/USAGE.ru.md](uml-viewer-dotnet/docs/USAGE.ru.md) (в локальном checkout) |
+| Сборки exe без Python | [docs/STANDALONE.ru.md](docs/STANDALONE.ru.md) |
 | Дисциплина агента | [Noodle-cpp/ub-mode — README.ru.md](https://github.com/Noodle-cpp/ub-mode/blob/master/README.ru.md) |
 | Обзор форков | [README.ru.md](README.ru.md) |
 

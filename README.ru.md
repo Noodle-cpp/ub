@@ -2,7 +2,7 @@
 
 Quality gate и UML viewer для разработки с агентом — **форки-компаньоны** [Noodle-cpp](https://github.com/Noodle-cpp).
 
-[English](README.md) · **[Полный цикл (RU)](POLNY-CIKL-UB.ru.md)** — с нуля до диаграммы и Regen
+[English](README.md) · **[Полный цикл (RU)](POLNY-CIKL-UB.ru.md)** · **[Сборки без Python](docs/STANDALONE.ru.md)**
 
 ## Репозитории-компаньоны
 
